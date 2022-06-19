@@ -1,0 +1,84 @@
+
+a.out:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000100003f10 <_main>:
+100003f10: ff 83 00 d1 	sub	sp, sp, #32
+100003f14: fd 7b 01 a9 	stp	x29, x30, [sp, #16]
+100003f18: fd 43 00 91 	add	x29, sp, #16
+100003f1c: bf c3 1f b8 	stur	wzr, [x29, #-4]
+100003f20: ff 0b 00 b9 	str	wzr, [sp, #8]
+100003f24: 01 00 00 14 	b	0x100003f28 <_main+0x18>
+100003f28: e8 0b 40 b9 	ldr	w8, [sp, #8]
+100003f2c: 08 15 00 71 	subs	w8, w8, #5
+100003f30: cc 02 00 54 	b.gt	0x100003f88 <_main+0x78>
+100003f34: 01 00 00 14 	b	0x100003f38 <_main+0x28>
+100003f38: e8 0b 40 b9 	ldr	w8, [sp, #8]
+100003f3c: 4a 00 80 52 	mov	w10, #2
+100003f40: 09 0d ca 1a 	sdiv	w9, w8, w10
+100003f44: 29 7d 0a 1b 	mul	w9, w9, w10
+100003f48: 08 01 09 6b 	subs	w8, w8, w9
+100003f4c: c8 00 00 35 	cbnz	w8, 0x100003f64 <_main+0x54>
+100003f50: 01 00 00 14 	b	0x100003f54 <_main+0x44>
+100003f54: 00 00 00 90 	adrp	x0, 0x100003000 <_main+0x44>
+100003f58: 00 90 3e 91 	add	x0, x0, #4004
+100003f5c: 0f 00 00 94 	bl	0x100003f98 <_puts+0x100003f98>
+100003f60: 05 00 00 14 	b	0x100003f74 <_main+0x64>
+100003f64: 00 00 00 90 	adrp	x0, 0x100003000 <_main+0x54>
+100003f68: 00 ac 3e 91 	add	x0, x0, #4011
+100003f6c: 0b 00 00 94 	bl	0x100003f98 <_puts+0x100003f98>
+100003f70: 01 00 00 14 	b	0x100003f74 <_main+0x64>
+100003f74: 01 00 00 14 	b	0x100003f78 <_main+0x68>
+100003f78: e8 0b 40 b9 	ldr	w8, [sp, #8]
+100003f7c: 08 05 00 11 	add	w8, w8, #1
+100003f80: e8 0b 00 b9 	str	w8, [sp, #8]
+100003f84: e9 ff ff 17 	b	0x100003f28 <_main+0x18>
+100003f88: 00 00 80 52 	mov	w0, #0
+100003f8c: fd 7b 41 a9 	ldp	x29, x30, [sp, #16]
+100003f90: ff 83 00 91 	add	sp, sp, #32
+100003f94: c0 03 5f d6 	ret
+
+Disassembly of section __TEXT,__stubs:
+
+0000000100003f98 <__stubs>:
+100003f98: 10 00 00 b0 	adrp	x16, 0x100004000 <__stubs+0x4>
+100003f9c: 10 02 40 f9 	ldr	x16, [x16]
+100003fa0: 00 02 1f d6 	br	x16
+
+Disassembly of section __TEXT,__cstring:
+
+0000000100003fa4 <__cstring>:
+100003fa4: 48 61 70 70 	adr	x8, #920619
+100003fa8: 79 20 00 48 	stxrh	w0, w25, [x3]
+100003fac: 61 63 6b 69 	ldpsw	x1, x24, [x27, #-168]
+100003fb0: 6e 67 21 0a 	bic	w14, w27, w1, lsl #25
+100003fb4: 00          	<unknown>
+
+Disassembly of section __TEXT,__unwind_info:
+
+0000000100003fb8 <__unwind_info>:
+100003fb8: 01 00 00 00 	udf	#1
+100003fbc: 1c 00 00 00 	udf	#28
+100003fc0: 00 00 00 00 	udf	#0
+100003fc4: 1c 00 00 00 	udf	#28
+100003fc8: 00 00 00 00 	udf	#0
+100003fcc: 1c 00 00 00 	udf	#28
+100003fd0: 02 00 00 00 	udf	#2
+100003fd4: 10 3f 00 00 	udf	#16144
+100003fd8: 34 00 00 00 	udf	#52
+100003fdc: 34 00 00 00 	udf	#52
+100003fe0: 99 3f 00 00 	udf	#16281
+100003fe4: 00 00 00 00 	udf	#0
+100003fe8: 34 00 00 00 	udf	#52
+100003fec: 03 00 00 00 	udf	#3
+100003ff0: 0c 00 01 00 	<unknown>
+100003ff4: 10 00 01 00 	<unknown>
+100003ff8: 00 00 00 00 	udf	#0
+100003ffc: 00 00 00 04 	<unknown>
+
+Disassembly of section __DATA_CONST,__got:
+
+0000000100004000 <__got>:
+100004000: 00 00 00 00 	udf	#0
+100004004: 00 00 00 80 	<unknown>
